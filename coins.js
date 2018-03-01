@@ -1,32 +1,7 @@
-/*
-  Input: 0.67
-  Output:
-  {
-    quarters: 2,
-    dimes: 1,
-    nickels: 1,
-    pennies: 2
-  }
+const coinInput = document.getElementById('coin-input');
+const button = document.getElementById('submit');
+const outputDiv = document.getElementById('output');
 
-*/
-/*
-function coinCounter () {
-  // Initialize a JavaScript object to hold the coins
-  var coinPurse = {
-    quarters: 0,
-    dimes: 0,
-    nickels: 0,
-    pennies: 0
-  };
-  
-  coinPurse.quarters = 0;
-
-  return coinPurse;
-}
-
-var coins = coinCounter()
-console.log();
-*/
 var coinPurse = {
   quarters: 0,
   dimes: 0,
@@ -41,9 +16,23 @@ function coinCounter(input) {
     coinPurse.nickels = Math.floor(newInput / .05);
     newInput = newInput - (coinPurse.nickels * .05);
     coinPurse.pennies = Math.round(newInput / .01);
+    printToDom(coinPurse);
+
 }
-coinCounter(93.34);
-console.log(coinPurse);
+
+button.addEventListener("click", function() {
+  let input = coinInput.value;
+  coinCounter(input);
+});
+
+function printToDom(coins) {
+  outputDiv.innerHTML = 
+    `<h3>Quarters: ${coins.quarters}</h3>
+    <h3>Dimes: ${coins.dimes}</h3>
+    <h3>Nickels: ${coins.nickels}</h3>
+    <h3>Pennies: ${coins.pennies}</h3>`;
+};
+
 
 
 
