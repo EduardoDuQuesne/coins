@@ -1,5 +1,6 @@
-# Coins
-## Nashville Software School: Front-end exercise
+# Nashville Software School: Front-end Exercise
+
+## Coins
 
 ## Requirements
 
